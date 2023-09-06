@@ -66,6 +66,24 @@ p {
   font-size: 16px;
 }
 
+#wish_1:checked + .card-wish .card-wish-icon.fa-solid,
+#wish_2:checked + .card-wish .card-wish-icon.fa-solid,
+#wish_3:checked + .card-wish .card-wish-icon.fa-solid,
+#wish_4:checked + .card-wish .card-wish-icon.fa-solid {
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+#wish_1:checked + .card-wish .card-wish-icon.fa-regular,
+#wish_2:checked + .card-wish .card-wish-icon.fa-regular,
+#wish_3:checked + .card-wish .card-wish-icon.fa-regular,
+#wish_4:checked + .card-wish .card-wish-icon.fa-regular {
+  display: none;
+}
+
 /****** Header ************/
 header {
   display: flex;
@@ -110,6 +128,26 @@ header .address-container .address-icon {
 }
 .main-cta-container .main-cta-button {
   margin-top: 20px;
+  transition: transform 330ms ease-in-out;
+}
+.main-cta-container .main-cta-button:hover {
+  transform: scale(1.05);
+}
+.main-cta-container .main-cta-button:hover::after {
+  opacity: 0.2;
+}
+.main-cta-container .main-cta-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 24px;
+  background: white;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
 }
 
 /****** Functioning ************/
@@ -155,6 +193,9 @@ header .address-container .address-icon {
 }
 .functioning-card:nth-of-type(3)::before {
   content: "3";
+}
+.functioning-card:nth-of-type(3) .functioning-card-icon {
+  color: #9356DC;
 }
 .functioning-card .functioning-card-icon {
   margin-right: 28px;
@@ -212,6 +253,12 @@ header .address-container .address-icon {
 }
 .restaurants-cards .card-content .card-subtitle {
   margin: 0;
+}
+.restaurants-cards .card-content .card-wish-icon {
+  cursor: pointer;
+}
+.restaurants-cards .card-content .card-wish-icon.fa-solid {
+  display: none;
 }
 
 /****** Footer ************/

@@ -76,6 +76,24 @@ p {
     font-size: 16px;
 }
 
+#wish_1:checked,
+#wish_2:checked,
+#wish_3:checked,
+#wish_4:checked {
+    + .card-wish .card-wish-icon.fa-solid {
+        background: linear-gradient( $primary-color, $secondary-color );
+        background-clip: text;
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline;
+    }
+
+    + .card-wish .card-wish-icon.fa-regular {
+        display: none;
+    }
+}
+
 
 /****** Header ************/
 header {
@@ -129,6 +147,29 @@ header {
 
     .main-cta-button {
         margin-top: 20px;
+        transition: transform 330ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+
+            &::after {
+                opacity: 0.2;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 24px;
+            background: white;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 250ms;
+        }
     }
 }
 
@@ -177,8 +218,14 @@ header {
     &:nth-of-type(2)::before {
         content: '2';
     }
-    &:nth-of-type(3)::before {
-        content: '3';
+    &:nth-of-type(3) {
+        &::before {
+            content: '3';
+        }
+
+        .functioning-card-icon {
+            color: $primary-color;
+        }
     }
 
     .functioning-card-icon {
@@ -247,6 +294,14 @@ header {
 
         .card-subtitle {
             margin: 0;
+        }
+
+        .card-wish-icon {
+            cursor: pointer;
+
+            &.fa-solid {
+                display: none;
+            }
         }
     }
 }
