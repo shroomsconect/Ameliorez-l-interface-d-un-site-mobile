@@ -1,0 +1,112 @@
+/****** Responsive media queries ***********/
+@media (min-width: 768px) {
+    header {
+        .logo-container {
+            height: 96px;
+        }
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: end;
+        align-items: end;
+        height: 57px;
+
+        .footer-link-container {
+            display: flex;
+            margin: 0 30px 0 0;
+
+            .footer-link-list {
+                margin: 0;
+            }
+
+            .footer-link-first {
+                margin-right: 10px;
+            }
+
+            .footer-link-second {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    .restaurants-cards {
+        .card {
+            max-width: 350px;
+        }
+    }
+}
+
+
+/* Medium devices (tablets, more/equal than 1024px) */
+@media (min-width: 1024px) {
+    .main-container {
+        section {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+    }
+
+    .restaurants-cards {
+        justify-content: space-between;
+
+        .card {
+            max-width: 400px;
+        }
+    }
+}
+
+
+@media (min-width: 1220px) {
+    .main-container {
+        section {
+            max-width: 1050px;
+        }
+    }
+
+    .functioning {
+        .functioning-container {
+            flex-direction: row;
+            width: max-content;
+            max-width: 100%;
+        }
+    }
+
+    .functioning-card {
+        width: 260px;
+
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+            margin-right: 30px;
+        }
+    }
+
+    .restaurants-cards {
+        .card {
+            max-width: 470px;
+        }
+    }
+}
+
+
+/* Large devices (desktops, more/equal than 1440px) */
+@media (min-width: 1440px) {
+    footer {
+        .footer-logo {
+            margin-right: 40px;
+        }
+
+        .footer-link-container {
+            margin-right: 100px;
+
+            .footer-link-first:nth-of-type(2) {
+                margin-right: 30px;
+            }
+        }
+    }
+}

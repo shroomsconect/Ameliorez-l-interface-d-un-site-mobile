@@ -14,6 +14,7 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
     <header>
@@ -34,99 +35,109 @@
             <a class="main-cta-button cta-button" href="#">Explorer nos restaurants</a>
         </section>
 
-        <section class="functioning">
-            <h2 class="section-title">Fonctionnement</h2>
-            <div class="functioning-container">
-                <div class="functioning-card">
-                    <i class="functioning-card-icon fa-lg fa-solid fa-mobile-screen-button"></i>
-                    <p class="functioning-card-text">Choisissez un restaurant</p>
+        <div class="functioning-bg-color">
+            <section class="functioning">
+                <h2 class="section-title">Fonctionnement</h2>
+                <div class="functioning-container">
+                    <div class="functioning-card">
+                        <i class="functioning-card-icon fa-lg fa-solid fa-mobile-screen-button"></i>
+                        <p class="functioning-card-text">Choisissez un restaurant</p>
+                    </div>
+                    <div class="functioning-card">
+                        <i class="functioning-card-icon fa-lg fa-solid fa-list-ul"></i>
+                        <p class="functioning-card-text">Composez votre menu</p>
+                    </div>
+                    <div class="functioning-card">
+                        <i class="functioning-card-icon fa-lg fa-solid fa-store"></i>
+                        <p class="functioning-card-text">Dégustez au restaurant</p>
+                    </div>
                 </div>
-                <div class="functioning-card">
-                    <i class="functioning-card-icon fa-lg fa-solid fa-list-ul"></i>
-                    <p class="functioning-card-text">Composez votre menu</p>
-                </div>
-                <div class="functioning-card">
-                    <i class="functioning-card-icon fa-lg fa-solid fa-store"></i>
-                    <p class="functioning-card-text">Dégustez au restaurant</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <section class="restaurants">
             <h2 class="section-title">Restaurants</h2>
             <div class="restaurants-cards">
-                <a href="restaurants/la-palette-du-gout.html" class="card-link">
-                    <article class="card restaurant-new">
+                <article class="card restaurant-new">
+                    <a href="restaurants/la-palette-du-gout.html" class="card-link">
                         <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Image du plat favori du restaurant">
+                    </a>
+                    <a href="restaurants/la-palette-du-gout.html" class="card-link">
                         <div class="card-content">
                             <div class="card-txt">
                                 <h3 class="card-title">La palette du goût</h3>
                                 <p class="card-subtitle">Ménilmontant</p>
                             </div>
-                            <input type="checkbox" name="wish_1" id="wish_1" hidden>
-                            <div class="card-wish">
-                                <label for="wish_1">
-                                    <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
-                                    <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
-                                </label>
-                            </div>
                         </div>
-                    </article>
-                </a>
-                <a href="restaurants/la-note-enchantee.html" class="card-link">
-                    <article class="card restaurant-new">
+                    </a>
+                    <input type="checkbox" name="wish_1" id="wish_1" hidden>
+                    <div class="card-wish">
+                        <label for="wish_1">
+                            <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
+                            <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
+                        </label>
+                    </div>
+                </article>
+                <article class="card restaurant-new">
+                    <a href="restaurants/la-note-enchantee.html" class="card-link">
                         <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Image du plat favori du restaurant">
+                    </a>
+                    <a href="restaurants/la-note-enchantee.html" class="card-link">
                         <div class="card-content">
                             <div class="card-txt">
                                 <h3 class="card-title">La note enchantée</h3>
                                 <p class="card-subtitle">Charonne</p>
                             </div>
-                            <input type="checkbox" name="wish_2" id="wish_2" hidden>
-                            <div class="card-wish">
-                                <label for="wish_2">
-                                    <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
-                                    <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
-                                </label>
-                            </div>
                         </div>
-                    </article>
-                </a>
-                <a href="restaurants/a-la-francaise.html" class="card-link">
-                    <article class="card">
+                    </a>
+                    <input type="checkbox" name="wish_2" id="wish_2" hidden>
+                    <div class="card-wish">
+                        <label for="wish_2">
+                            <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
+                            <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
+                        </label>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="restaurants/a-la-francaise.html" class="card-link">
                         <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Image du plat favori du restaurant">
+                    </a>
+                    <a href="restaurants/a-la-francaise.html" class="card-link">
                         <div class="card-content">
                             <div class="card-txt">
                                 <h3 class="card-title">À la française</h3>
                                 <p class="card-subtitle">Cité Rouge</p>
                             </div>
-                            <input type="checkbox" name="wish_3" id="wish_3" hidden>
-                            <div class="card-wish">
-                                <label for="wish_3">
-                                    <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
-                                    <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
-                                </label>
-                            </div>
                         </div>
-                    </article>
-                </a>
-                <a href="restaurants/le-delice-des-sens.html" class="card-link">
-                    <article class="card">
+                    </a>
+                    <input type="checkbox" name="wish_3" id="wish_3" hidden>
+                    <div class="card-wish">
+                        <label for="wish_3">
+                            <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
+                            <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
+                        </label>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="restaurants/le-delice-des-sens.html" class="card-link">
                         <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image du plat favori du restaurant">
+                    </a>
+                    <a href="restaurants/le-delice-des-sens.html" class="card-link">
                         <div class="card-content">
                             <div class="card-txt">
                                 <h3 class="card-title">Le délice des sens</h3>
                                 <p class="card-subtitle">Folie-Méricourt</p>
                             </div>
-                            <input type="checkbox" name="wish_4" id="wish_4" hidden>
-                            <div class="card-wish">
-                                <label for="wish_4">
-                                    <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
-                                    <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
-                                </label>
-                            </div>
                         </div>
-                    </article>
-                </a>
+                    </a>
+                    <input type="checkbox" name="wish_4" id="wish_4" hidden>
+                    <div class="card-wish">
+                        <label for="wish_4">
+                            <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
+                            <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
+                        </label>
+                    </div>
+                </article>
             </div>
         </section>
 

@@ -2,10 +2,10 @@
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
+$quaternary-color: #353535;
 $restaurant-new-font-color: #008766;
 $main-bg-color: #F6F6F6;
 $address-bg-color: #EAEAEA;
-$footer-bg-color: #353535;
 $functioning-icon-color: #7E7E7E;
 
 
@@ -56,24 +56,29 @@ p {
     font-weight: bold;
     color: white;
     background: linear-gradient( $secondary-color, $primary-color );
-}
+    transition: transform 330ms ease-in-out;
 
-.card {
-    background-color: white;
-    border-radius: 15px;
-}
+    &:hover {
+        transform: scale(1.05);
 
-.card-link {
-    text-decoration: none;
-    color: black;
-}
+        &::after {
+            opacity: 0.2;
+        }
+    }
 
-.card img {
-    object-fit: cover;
-}
-
-.card-title {
-    font-size: 16px;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 24px;
+        background: white;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
 }
 
 #wish_1:checked,
@@ -143,40 +148,22 @@ header {
 
     .main-cta-text {
         font-size: 1.125em;
+        color: $quaternary-color;
     }
 
     .main-cta-button {
         margin-top: 20px;
-        transition: transform 330ms ease-in-out;
-
-        &:hover {
-            transform: scale(1.05);
-
-            &::after {
-                opacity: 0.2;
-            }
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            border-radius: 24px;
-            background: white;
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 250ms;
-        }
     }
 }
 
 
 /****** Functioning ************/
-.functioning {
+
+.functioning-bg-color {
     background-color: white;
+}
+
+.functioning {
 
     .section-title {
         margin-bottom: 35px;
@@ -185,10 +172,14 @@ header {
     .functioning-container {
         display: flex;
         flex-direction: column;
+        align-self: center;
+        width: 100%;
+        max-width: 600px;
     }
 }
 
 .functioning-card {
+    position: relative;
     display: flex;
     align-items: center;
     height: 73px;
@@ -204,7 +195,7 @@ header {
         justify-content: center;
         align-items: center;
         position: absolute;
-        left: 14px;
+        left: -11px;
         width: 24px;
         height: 24px;
         color: white;
@@ -249,19 +240,24 @@ header {
 .restaurants-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-
-    .card-link {
-        width: 100%;
-    }
+    justify-content: space-around;
 
     .card {
         display: flex;
         flex-direction: column;
         position: relative;
         margin: 10px 0;
+        width: 100%;
+        background-color: white;
+        border-radius: 15px;
+
+        .card-link {
+            text-decoration: none;
+            color: black;
+        }
 
         img {
+            object-fit: cover;
             width: 100%;
             height: 180px;
             border-top-left-radius: 15px;
@@ -289,16 +285,23 @@ header {
         box-sizing: border-box;
 
         .card-title {
+            font-size: 16px;
             margin: 0 0 4px 0;
         }
 
         .card-subtitle {
             margin: 0;
         }
+    }
+
+    .card-wish {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
 
         .card-wish-icon {
             cursor: pointer;
-
+    
             &.fa-solid {
                 display: none;
             }
@@ -311,7 +314,7 @@ header {
 footer {
     padding: 22px 25px;
     color: white;
-    background-color: $footer-bg-color;
+    background-color: $quaternary-color;
 
     .footer-logo {
         height: 18px;
