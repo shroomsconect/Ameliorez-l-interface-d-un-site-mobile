@@ -17,9 +17,14 @@
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
+    <div class="loading-page">
+        <div class="loading-mug">
+            <i class="fa-solid fa-mug-hot"></i>
+        </div>
+    </div>
     <header>
         <div class="logo-container">
-            <a class="header-link" href="../" hidden><i class="header-icon fa-solid fa-arrow-left fa-lg"></i></a>
+            <a class="header-link" href="../index.html" hidden><i class="header-icon fa-solid fa-arrow-left fa-lg"></i></a>
             <img class="header-logo" src="./images/logo/ohmyfood@2x.svg" alt="Oh my food logo">
         </div>
         <div class="address-container">
@@ -27,35 +32,35 @@
             <p class="address-text">Paris, Belleville</p>
         </div>
     </header>
-    <main class="main-container">
+    <main class="main-container-home">
 
         <section class="main-cta-container">
             <h1 class="section-title">Réservez le menu qui vous convient</h1>
             <p class="main-cta-text">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
-            <a class="main-cta-button cta-button" href="#">Explorer nos restaurants</a>
+            <a class="main-cta-button cta-button" href="#restaurants">Explorer nos restaurants</a>
         </section>
 
         <div class="functioning-bg-color">
             <section class="functioning">
                 <h2 class="section-title">Fonctionnement</h2>
                 <div class="functioning-container">
-                    <div class="functioning-card">
-                        <i class="functioning-card-icon fa-lg fa-solid fa-mobile-screen-button"></i>
-                        <p class="functioning-card-text">Choisissez un restaurant</p>
+                    <div class="list-card">
+                        <i class="list-card-icon fa-lg fa-solid fa-mobile-screen-button"></i>
+                        <p class="list-card-text">Choisissez un restaurant</p>
                     </div>
-                    <div class="functioning-card">
-                        <i class="functioning-card-icon fa-lg fa-solid fa-list-ul"></i>
-                        <p class="functioning-card-text">Composez votre menu</p>
+                    <div class="list-card">
+                        <i class="list-card-icon fa-lg fa-solid fa-list-ul"></i>
+                        <p class="list-card-text">Composez votre menu</p>
                     </div>
-                    <div class="functioning-card">
-                        <i class="functioning-card-icon fa-lg fa-solid fa-store"></i>
-                        <p class="functioning-card-text">Dégustez au restaurant</p>
+                    <div class="list-card">
+                        <i class="list-card-icon fa-lg fa-solid fa-store"></i>
+                        <p class="list-card-text">Dégustez au restaurant</p>
                     </div>
                 </div>
             </section>
         </div>
 
-        <section class="restaurants">
+        <section class="restaurants" id="restaurants">
             <h2 class="section-title">Restaurants</h2>
             <div class="restaurants-cards">
                 <article class="card restaurant-new">
@@ -71,10 +76,10 @@
                         </div>
                     </a>
                     <input type="checkbox" name="wish_1" id="wish_1" hidden>
-                    <div class="card-wish">
+                    <div class="wish">
                         <label for="wish_1">
-                            <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
-                            <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
+                            <i class="wish-icon fa-lg fa-regular fa-heart"></i>
+                            <i class="wish-icon fa-lg fa-solid fa-heart"></i>
                         </label>
                     </div>
                 </article>
@@ -91,10 +96,10 @@
                         </div>
                     </a>
                     <input type="checkbox" name="wish_2" id="wish_2" hidden>
-                    <div class="card-wish">
+                    <div class="wish">
                         <label for="wish_2">
-                            <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
-                            <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
+                            <i class="wish-icon fa-lg fa-regular fa-heart"></i>
+                            <i class="wish-icon fa-lg fa-solid fa-heart"></i>
                         </label>
                     </div>
                 </article>
@@ -111,10 +116,10 @@
                         </div>
                     </a>
                     <input type="checkbox" name="wish_3" id="wish_3" hidden>
-                    <div class="card-wish">
+                    <div class="wish">
                         <label for="wish_3">
-                            <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
-                            <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
+                            <i class="wish-icon fa-lg fa-regular fa-heart"></i>
+                            <i class="wish-icon fa-lg fa-solid fa-heart"></i>
                         </label>
                     </div>
                 </article>
@@ -131,10 +136,10 @@
                         </div>
                     </a>
                     <input type="checkbox" name="wish_4" id="wish_4" hidden>
-                    <div class="card-wish">
+                    <div class="wish">
                         <label for="wish_4">
-                            <i class="card-wish-icon fa-lg fa-regular fa-heart"></i>
-                            <i class="card-wish-icon fa-lg fa-solid fa-heart"></i>
+                            <i class="wish-icon fa-lg fa-regular fa-heart"></i>
+                            <i class="wish-icon fa-lg fa-solid fa-heart"></i>
                         </label>
                     </div>
                 </article>
@@ -157,7 +162,7 @@
                 <a class="footer-link" href="#">Mentions légales</a>
             </li>
             <li class="footer-link-list footer-link-second">
-                <a class="footer-link" href="#">Contact</a>
+                <a class="footer-link" href="mailto:contact@ohmyfood.com">Contact</a>
             </li>
         </ul>
     </footer>

@@ -1,0 +1,126 @@
+/****** Variable ***********/
+/****** General ***********/
+.bg-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 275px;
+}
+
+.main-container-restaurant {
+  position: relative;
+  margin-top: -60px;
+  border-radius: 40px 40px 0 0;
+  max-width: 1055px;
+  margin: -60px auto 0 auto;
+}
+.main-container-restaurant section {
+  padding: 10px;
+}
+.main-container-restaurant .wish .wish-icon {
+  top: 5px;
+}
+
+/****** Menu ***********/
+.menu .cta-button {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto 30px auto;
+  padding: 0 50px;
+}
+.menu .menu-title-and-wish {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu .menu-title-and-wish .first-title {
+  font-family: "Shrikhand";
+  margin: 25px 5px;
+}
+.menu .menu-title-and-wish .wish {
+  margin-right: 30px;
+}
+.menu .menu-container {
+  opacity: 0;
+  margin-bottom: 20px;
+}
+.menu .menu-container:nth-child(2) {
+  animation: loading_menu_container 1000ms 300ms forwards;
+}
+.menu .menu-container:nth-child(3) {
+  animation: loading_menu_container 1000ms 600ms forwards;
+}
+.menu .menu-container:nth-child(4) {
+  animation: loading_menu_container 1000ms 900ms forwards;
+}
+.menu .menu-container label {
+  cursor: pointer;
+}
+.menu .menu-container .menu-container-title {
+  font-size: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.menu .menu-container .menu-container-title:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 5px;
+  border-bottom: solid 3px #99E2D0;
+}
+.menu .menu-container .menu-choice {
+  position: relative;
+  align-items: end;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 69px;
+  margin: 0 0 15px 0;
+  padding: 0 20px;
+}
+.menu .menu-container .menu-choice:hover .menu-choice-txt {
+  max-width: 69%;
+}
+.menu .menu-container .menu-choice:hover .menu-choice-txt + .menu-choice-price,
+.menu .menu-container .menu-choice:hover .menu-choice-txt + .menu-choice-price + .menu-choice-check {
+  transform: translateX(-61px);
+}
+.menu .menu-container .menu-choice .menu-choice-txt {
+  margin: auto 0;
+  white-space: nowrap;
+}
+.menu .menu-container .menu-choice .menu-choice-title,
+.menu .menu-container .menu-choice .menu-choice-subtitle {
+  margin: 5px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: all 330ms ease-in-out;
+}
+.menu .menu-container .menu-choice .menu-choice-title {
+  font-weight: 500;
+}
+.menu .menu-container .menu-choice .menu-choice-subtitle {
+  font-size: 0.938em;
+  font-weight: 300;
+}
+.menu .menu-container .menu-choice .menu-choice-price {
+  transition: transform 330ms ease-in-out;
+}
+.menu .menu-container .menu-choice .menu-choice-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: white;
+  width: 60px;
+  height: 100%;
+  right: -61px;
+  background-color: #99E2D0;
+  transition: transform 330ms ease-in-out;
+}
+
+/****** Animation Loading Page ************/
+@keyframes loading_menu_container {
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=restaurants.css.map */

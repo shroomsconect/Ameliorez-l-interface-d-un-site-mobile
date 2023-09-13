@@ -1,4 +1,4 @@
-/****** Variable ***********/
+/****** Variable and Function ***********/
 /****** General ***********/
 * {
   font-family: "Roboto", sans-serif;
@@ -24,14 +24,19 @@ p {
   margin: 0;
 }
 
-.main-container {
+.main-container-home,
+.main-container-restaurant {
   width: 100%;
   box-sizing: border-box;
   background-color: #F6F6F6;
 }
-.main-container section {
+.main-container-home section,
+.main-container-restaurant section {
   display: flex;
   flex-direction: column;
+}
+
+.main-container-home section {
   padding: 50px 15px;
 }
 
@@ -45,6 +50,7 @@ p {
   font-weight: bold;
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
   transition: transform 330ms ease-in-out;
 }
 .cta-button:hover {
@@ -67,22 +73,42 @@ p {
   transition: opacity 250ms;
 }
 
-#wish_1:checked + .card-wish .card-wish-icon.fa-solid,
-#wish_2:checked + .card-wish .card-wish-icon.fa-solid,
-#wish_3:checked + .card-wish .card-wish-icon.fa-solid,
-#wish_4:checked + .card-wish .card-wish-icon.fa-solid {
+.list-card {
+  display: flex;
+  align-items: center;
+  height: 73px;
+  padding: 0 30px;
+  margin: 0 0 25px 10px;
+  border-radius: 20px;
+  background-color: #F6F6F6;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+#wish_1:checked + .wish .wish-icon.fa-solid,
+#wish_2:checked + .wish .wish-icon.fa-solid,
+#wish_3:checked + .wish .wish-icon.fa-solid,
+#wish_4:checked + .wish .wish-icon.fa-solid {
+  height: 1em;
+}
+
+.wish label {
+  position: relative;
+}
+.wish .wish-icon {
+  cursor: pointer;
+  position: absolute;
+  top: -1px;
+  right: 0;
+  line-height: 1em;
+}
+.wish .wish-icon.fa-solid {
+  height: 0;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline;
-}
-#wish_1:checked + .card-wish .card-wish-icon.fa-regular,
-#wish_2:checked + .card-wish .card-wish-icon.fa-regular,
-#wish_3:checked + .card-wish .card-wish-icon.fa-regular,
-#wish_4:checked + .card-wish .card-wish-icon.fa-regular {
-  display: none;
+  transition: height 330ms ease-in-out;
 }
 
 /****** Header ************/
@@ -105,8 +131,8 @@ header .logo-container .header-icon {
   left: 15px;
 }
 header .logo-container .header-logo {
-  height: 36px;
-  margin: 0 auto;
+  height: 30px;
+  margin: 6px auto 0 auto;
 }
 header .address-container {
   display: flex;
@@ -147,19 +173,10 @@ header .address-container .address-icon {
   width: 100%;
   max-width: 600px;
 }
-
-.functioning-card {
+.functioning .list-card {
   position: relative;
-  display: flex;
-  align-items: center;
-  height: 73px;
-  padding: 0 30px;
-  margin: 0 0 25px 10px;
-  border-radius: 20px;
-  background-color: #F6F6F6;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
-.functioning-card::before {
+.functioning .list-card::before {
   content: "";
   display: flex;
   justify-content: center;
@@ -172,23 +189,23 @@ header .address-container .address-icon {
   border-radius: 12px;
   background-color: #9356DC;
 }
-.functioning-card:nth-of-type(1)::before {
+.functioning .list-card:nth-of-type(1)::before {
   content: "1";
 }
-.functioning-card:nth-of-type(2)::before {
+.functioning .list-card:nth-of-type(2)::before {
   content: "2";
 }
-.functioning-card:nth-of-type(3)::before {
+.functioning .list-card:nth-of-type(3)::before {
   content: "3";
 }
-.functioning-card:nth-of-type(3) .functioning-card-icon {
+.functioning .list-card:hover .list-card-icon {
   color: #9356DC;
 }
-.functioning-card .functioning-card-icon {
+.functioning .list-card .list-card-icon {
   margin-right: 28px;
   color: #7E7E7E;
 }
-.functioning-card .functioning-card-text {
+.functioning .list-card .list-card-text {
   font-weight: 500;
 }
 
@@ -248,16 +265,10 @@ header .address-container .address-icon {
 .restaurants-cards .card-content .card-subtitle {
   margin: 0;
 }
-.restaurants-cards .card-wish {
+.restaurants-cards .wish {
   position: absolute;
   bottom: 30px;
   right: 30px;
-}
-.restaurants-cards .card-wish .card-wish-icon {
-  cursor: pointer;
-}
-.restaurants-cards .card-wish .card-wish-icon.fa-solid {
-  display: none;
 }
 
 /****** Footer ************/
@@ -287,4 +298,66 @@ footer .footer-link-container .footer-link-list .footer-link-icon {
 footer .footer-link-container .footer-link-list .footer-link {
   color: white;
   text-decoration: none;
+}
+
+/****** Loading Page ************/
+.loading-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+  font-size: 10em;
+  opacity: 1;
+  animation: loading_page 2400ms forwards;
+}
+.loading-page .loading-mug {
+  position: absolute;
+  top: 40vh;
+  width: 1em;
+  height: 1em;
+  margin-top: 1em;
+  overflow: hidden;
+  animation: mug_loading_overflow 2400ms;
+}
+.loading-page .fa-mug-hot {
+  position: absolute;
+  top: -1em;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: mug_loading_move 2400ms;
+}
+
+/****** Animation Loading Page ************/
+@keyframes loading_page {
+  0% {
+    pointer-events: auto;
+  }
+  80% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+    pointer-events: auto;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes mug_loading_overflow {
+  80%, 100% {
+    margin-top: 0;
+  }
+}
+@keyframes mug_loading_move {
+  80%, 100% {
+    top: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
