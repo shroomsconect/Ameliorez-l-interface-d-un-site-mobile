@@ -91,13 +91,15 @@ p {
   height: 1em;
 }
 
+.wish {
+  height: 20px;
+}
 .wish label {
   position: relative;
 }
 .wish .wish-icon {
   cursor: pointer;
   position: absolute;
-  top: -1px;
   right: 0;
   line-height: 1em;
 }

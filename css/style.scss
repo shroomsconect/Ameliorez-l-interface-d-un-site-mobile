@@ -117,6 +117,8 @@ p {
 }
 
 .wish {
+    height: 20px;
+
     label {
         position: relative;
     }
@@ -124,7 +126,6 @@ p {
     .wish-icon {
         cursor: pointer;
         position: absolute;
-        top: -1px;
         right: 0;
         line-height: 1em;
 
