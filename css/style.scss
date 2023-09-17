@@ -1,12 +1,9 @@
 /****** Variable and Function ***********/
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
 $quaternary-color: #353535;
-$restaurant-new-font-color: #008766;
 $main-bg-color: #F6F6F6;
 $address-bg-color: #EAEAEA;
-$functioning-icon-color: #7E7E7E;
 
 @mixin text_bg_dual_color( $first_color ,$second_color ) {
     background: linear-gradient( $first_color ,$second_color );
@@ -51,12 +48,6 @@ p {
     section {
         display: flex;
         flex-direction: column;
-    }
-}
-
-.main-container-home {
-    section {
-        padding: 50px 15px;
     }
 }
 
@@ -179,159 +170,6 @@ header {
 }
 
 
-/****** Main CTA ************/
-.main-cta-container {
-    align-items: center;
-    text-align: center;
-
-    .main-cta-text {
-        font-size: 1.125em;
-        color: $quaternary-color;
-    }
-
-    .main-cta-button {
-        margin-top: 20px;
-    }
-}
-
-
-/****** Functioning ************/
-
-.functioning-bg-color {
-    background-color: white;
-}
-
-.functioning {
-
-    .section-title {
-        margin-bottom: 35px;
-    }
-
-    .functioning-container {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        width: 100%;
-        max-width: 600px;
-    }
-
-    .list-card {
-        position: relative;
-
-        &::before {
-            content: '';
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            left: -11px;
-            width: 24px;
-            height: 24px;
-            color: white;
-            border-radius: 12px;
-            background-color: $primary-color;
-        }
-    
-        &:nth-of-type(1)::before {
-            content: '1';
-        }
-        &:nth-of-type(2)::before {
-            content: '2';
-        }
-        &:nth-of-type(3) {
-            &::before {
-                content: '3';
-            }
-        }
-
-        &:hover .list-card-icon {
-            color: $primary-color;
-        }
-    
-        .list-card-icon {
-            margin-right: 28px;
-            color: $functioning-icon-color;
-        }
-    
-        .list-card-text {
-            font-weight: 500;
-        }
-    }
-}
-
-
-/****** Restaurants ************/
-.restaurants {
-    .section-title {
-        margin-bottom: 20px;
-    }
-}
-
-.restaurants-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    .card {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        margin: 10px 0;
-        width: 100%;
-        background-color: white;
-        border-radius: 15px;
-
-        .card-link {
-            text-decoration: none;
-            color: black;
-        }
-
-        img {
-            object-fit: cover;
-            width: 100%;
-            height: 180px;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
-
-        &.restaurant-new::before {
-            content: 'Nouveau';
-            font-size: 0.875em;
-            padding: 6px 13px;
-            border-radius: 2px;
-            color: $restaurant-new-font-color;
-            background-color: $tertiary-color;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-        }
-    }
-
-    .card-content {
-        padding: 20px 30px 20px 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-sizing: border-box;
-
-        .card-title {
-            font-size: 16px;
-            margin: 0 0 4px 0;
-        }
-
-        .card-subtitle {
-            margin: 0;
-        }
-    }
-
-    .wish {
-        position: absolute;
-        bottom: 30px;
-        right: 30px;
-    }
-}
-
-
 /****** Footer ************/
 footer {
     padding: 22px 25px;
@@ -365,53 +203,4 @@ footer {
             }
         }
     }
-}
-
-
-/****** Loading Page ************/
-.loading-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $main-bg-color;
-    pointer-events: none;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    z-index: 99;
-    font-size: 10em;
-    opacity: 1;
-    animation: loading_page 2400ms forwards;
-
-    .loading-mug {
-        position: absolute;
-        top: 40vh;
-        width: 1em;
-        height: 1em;
-        margin-top: 1em;
-        overflow: hidden;
-        animation: mug_loading_overflow 2400ms;
-    }
-
-    .fa-mug-hot {
-        position: absolute;
-        top: -1em;
-        @include text_bg_dual_color( $primary-color, $secondary-color );
-        animation: mug_loading_move 2400ms;
-    }
-}
-
-
-/****** Animation Loading Page ************/
-@keyframes loading_page {
-    0% {pointer-events: auto;}
-    80% {opacity: 1;}
-    99% {opacity: 0;pointer-events: auto;}
-    100% {opacity: 0;}
-}
-@keyframes mug_loading_overflow {
-    80% ,100% {margin-top: 0;}
-}
-@keyframes mug_loading_move {
-    80% ,100% {top: 0;}
 }
